@@ -44,9 +44,7 @@ export default class Game extends React.Component {
 	}
 
 	render(): React.ReactNode {
-		console.log("вывожу информацию об экране")
-		// console.log(window.Telegram.WebApp)
-		// console.log(window.screen)
+		// console.log("вывожу информацию об экране")
 		return(
 			<>
 			<div className={style.Game}>
