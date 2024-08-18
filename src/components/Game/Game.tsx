@@ -4,6 +4,7 @@ import locs from './locs/locs.json'
 import OilPumps from './OilPumps/OilPumps.tsx';
 import Shop from './Shop/Shop.tsx';
 // import * as TWA from 'https://telegram.org/js/telegram-web-app.js'
+declare const window: any;
 
 export default class Game extends React.Component {
 	loc: {[key: string]: string};
