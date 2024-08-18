@@ -1,0 +1,52 @@
+.Shop
+{
+	position: fixed;
+	top: 50vh;
+	left: 50vw;
+
+	display: block;
+
+	box-sizing: border-box;
+	width: 75vw;
+	height: 81vh;
+	padding: 14% 6% 7%;
+
+	background-image: url(./assets/window-bg-lq.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+
+	translate: -50% -50%;
+}
+
+.shopList
+{
+	overflow: scroll;
+	display: flex;
+	flex-direction: column;
+
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+
+	border: none;
+	border-radius: 1rem;
+	background-color: #0000;
+
+	gap: 1em;
+	justify-content: start;
+	align-items: center;
+
+	div
+	{
+		display: flex;
+		flex-direction: row;
+
+		box-sizing: border-box;
+		width: 100%;
+		min-height: 200px;
+
+		background-color: #fff;
+		border-radius: 1em;
+	}
+}

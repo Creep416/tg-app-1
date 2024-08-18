@@ -1,0 +1,236 @@
+:root
+{
+	--active: hsl(204, 49%, 64%);
+	--col-blue: hsl(216.449, 67%, 32%);
+	--col-violet: #515185;
+}
+
+.Game
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	background-image: url(./assets/bg-clean.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+button.decor, .decor>button
+{
+	--button-rotate: -20deg;
+	padding: 0;
+
+	border-width: 2px;
+	border-style: none;
+	background-color: var(--col-blue);
+}
+
+button.decor:before, .decor>button:before
+{
+	--button-rotate: -45deg;
+	position: relative;
+	z-index: -1;
+	top: 50%;
+	left: 50%;
+
+	display: block;
+
+	width: calc(100% + 8px);
+	height: calc(100% + 8px);
+
+	content: '';
+
+	border-radius: inherit;
+	background-image: linear-gradient(var(--button-rotate), hsl(216.449, 33%, 50%) 80%, #ccc 90%);
+
+	translate: -50% -50%;
+}
+
+
+div.interface
+{
+	width: 100vw;
+	height: 100vh;
+}
+
+.resources
+{
+	position: relative;
+
+	display: flex;
+	flex-direction: row;
+
+	width: 100vw;
+	height: 5.5vh;
+
+	justify-content: space-around;
+	align-items: end;
+
+	div
+	{
+		position: relative;
+
+		width: 27%;
+		height: 2.7vh;
+
+		border: 1px solid #204;
+		border-radius: 5vh;
+		background-color: var(--col-violet);
+		background-repeat: no-repeat;
+		background-position: -8vw 50%;
+		background-size: 100%;
+
+		justify-content: space-between;
+		align-items: center;
+
+		.amount
+		{
+			position: absolute;
+			bottom: 50%;
+			left: 20%;
+
+			font-size: 2vh;
+			width: 80%;
+			height: 100%;
+
+			text-align: left;
+			vertical-align: middle;
+
+			border: none;
+
+			translate: 0;
+			translate: 0 50%;
+		}
+		
+		.icon
+		{
+			position: absolute;
+			bottom: 50%;
+			left: -12%;
+
+			display: block;
+
+			height: 200%;
+
+			translate: 0 50%;
+			object-fit: contain;
+		}
+		
+		.buy
+		{
+			position: absolute;
+			right: 2%;
+			bottom: 50%;
+
+			height: 75%;
+			margin: 0;
+			padding: 0;
+
+			border: none;
+			background-color: #0000;
+			background-image: url(./assets/buttons/plus.png);
+			background-size: contain;
+
+			translate: 0 50%;
+			aspect-ratio: 1;
+		}
+	}
+}
+
+button.collect
+{
+	position: absolute;
+	bottom: 10vh;
+	left: 30vw;
+
+	width: 40vw;
+	height: 4vh;
+
+	border-radius: 2rem;
+	.text
+	{
+		height: 50%;
+		width: 100%;
+		text-align: center;
+		top: -100%;
+		font-size: 2vh;
+		position: relative;
+	}
+}
+
+nav.main
+{
+	position: fixed;
+	bottom: 0vh;
+
+	display: flex;
+	flex-direction: row;
+
+	width: 100vw;
+	height: 8vh;
+
+	justify-content: space-around;
+	align-items: center;
+
+	.home
+	{
+		background-image: url(assets/buttons/home.png);
+	}
+	.shop
+	{
+		background-image: url(assets/buttons/shop.png);
+	}
+	.friends
+	{
+		background-image: url(assets/buttons/society.png);
+	}
+	.map
+	{
+		background-image: url(assets/buttons/map.png);
+	}
+	button
+	{
+		width: 22%;
+		height: 100%;
+
+		border-width: 0 0 0 0;
+		border-radius: 1rem 1rem 0 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: auto 70%;
+	}
+}
+
+.active
+{
+	background-color: var(--active) !important;
+}
+
+.show
+{
+	display: block;
+}
+.hide
+{
+	display: none;
+}
+
+@media only screen and (min-width: 720px)
+{
+	html
+	{
+		font-size: 1.25em;
+	}
+}
+
+@media only screen and (min-width: 1080px)
+{
+	html
+	{
+		font-size: 1.5em;
+	}
+}

@@ -1,0 +1,181 @@
+.main
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100vw;
+	height: 100vh;
+
+	background-image: url(./assets/background.jpg);
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-size: cover;
+	background-position-y: 70%;
+}
+.landscape
+{
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+.landscape>.text
+{
+	font-size: 3rem;
+}
+@media screen and (orientation:landscape) {
+	.main{
+		display: none;	
+	}
+	.landscape{
+		display: flex;
+	}
+}
+
+.clouds
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100vw;
+	height: 100vh;
+
+	animation-name: clouds;
+	animation-duration: 30s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+	background-image: url(./assets/clouds.png);
+	background-repeat: repeat-x;
+	background-position: center;
+	background-size: contain;
+}
+
+.thumbleweedCard
+{
+	position: fixed;
+	bottom: 10%;
+	left: 0;
+
+	height: 16vh;
+
+	animation-name: sideJumping;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+	background-image: url(./assets/shadow.png);
+	background-repeat: no-repeat;
+	background-position: center 95%;
+	background-size: contain;
+
+	aspect-ratio: 1;
+}
+
+.thumbleweed
+{
+	position: relative;
+
+	height: 16vh;
+
+	animation-name: rotating;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+	background-image: url(./assets/thumbleweed.png);
+	background-repeat: repeat-x;
+	background-position: center;
+	background-size: contain;
+
+	aspect-ratio: 1;
+}
+
+@keyframes rotating
+{
+	0%
+	{
+		bottom: 0;
+
+		transform: rotate(-4turn);
+	}
+
+	20%
+	{
+		bottom: 20%;
+	}
+
+	60%
+	{
+		bottom: 10%;
+	}
+
+	80%
+	{
+		bottom: 15%;
+	}
+
+	100%
+	{
+		bottom: 4%;
+
+		transform: rotate(0);
+		transform-origin: 55% 55%;
+	}
+}
+
+@keyframes sideJumping
+{
+	0%
+	{
+		background-size: 100%;
+		left: -50%;
+	}
+
+	20%
+	{
+		background-size: 80%;
+	}
+
+	45%
+	{
+		left: 25%;
+	}
+
+	60%
+	{
+		background-size: 90%;
+		left: 50%;
+	}
+
+	80%
+	{
+		background-size: 85%;
+		left: 75%;
+	}
+
+	100%
+	{
+		background-size: 98%;
+		left: 100%;
+
+		transform-origin: 55% 55%;
+	}
+}
+@keyframes clouds
+{
+	0%
+	{
+		background-position-x: 0vw;
+	}
+	50%
+	{
+		/*		background-position: right 0;*/
+	}
+	100%
+	{
+		background-position-x: 100vw;
+	}
+}
