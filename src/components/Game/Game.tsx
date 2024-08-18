@@ -49,23 +49,22 @@ export default class Game extends React.Component {
 		// console.log(window.screen)
 		return(
 			<>
-			Header set Access-Control-Allow-Origin 'https://telegram.org/js/telegram-web-app.js'
 			<div className={style.Game}>
 				<div className={style.interface}>
 					
 					<div className={style.resources}>
 						<div className={style.oil}>
 							<div className={style.amount}>100</div>
-							<img className={style.icon} src="/src/components/Game/assets/buttons/oil.png"/>
+							<img className={style.icon} src='./assets/buttons/oil.png'/>
 						</div>
 						<div className={style.money}>
 							<div className={style.amount}></div>
-							<img className={style.icon} src="/src/components/Game/assets/buttons/coin.png"/>
+							<img className={style.icon} src='./assets/buttons/coin.png'/>
 							<button className={style.buy} onClick={()=>this.setActive('buyMoney')}></button>
 						</div>
 						<div className={style.diamonds}>
 							<div className={style.amount}></div>
-							<img className={style.icon} src="/src/components/Game/assets/buttons/diamond.png"/>
+							<img className={style.icon} src='./assets/buttons/diamond.png'/>
 							<button className={style.buy} onClick={()=>this.setActive('buyDiamonds')}></button>
 						</div>
 					</div>

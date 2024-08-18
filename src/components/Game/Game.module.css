@@ -14,7 +14,7 @@
 	width: 100%;
 	height: 100%;
 
-	background-image: url(./assets/bg-clean.jpg);
+	background-image: url(/assets/bg-clean.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
@@ -132,7 +132,7 @@ div.interface
 
 			border: none;
 			background-color: #0000;
-			background-image: url(./assets/buttons/plus.png);
+			background-image: url(/assets/buttons/plus.png);
 			background-size: contain;
 
 			translate: 0 50%;
@@ -178,19 +178,19 @@ nav.main
 
 	.home
 	{
-		background-image: url(assets/buttons/home.png);
+		background-image: url(/assets/buttons/home.png);
 	}
 	.shop
 	{
-		background-image: url(assets/buttons/shop.png);
+		background-image: url(/assets/buttons/shop.png);
 	}
 	.friends
 	{
-		background-image: url(assets/buttons/society.png);
+		background-image: url(/assets/buttons/society.png);
 	}
 	.map
 	{
-		background-image: url(assets/buttons/map.png);
+		background-image: url(/assets/buttons/map.png);
 	}
 	button
 	{
