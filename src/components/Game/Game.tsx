@@ -3,7 +3,6 @@ import style from './Game.module.css';
 import locs from './locs/locs.json' 
 import OilPumps from './OilPumps/OilPumps.tsx';
 import Shop from './Shop/Shop.tsx';
-// import * as TWA from 'https://telegram.org/js/telegram-web-app.js'
 declare const window: any;
 
 export default class Game extends React.Component {
@@ -45,8 +44,9 @@ export default class Game extends React.Component {
 	}
 
 	render(): React.ReactNode {
-		console.log("вывожу объект")
-		console.log(window.Telegram.WebApp)
+		console.log("вывожу информацию об экране")
+		// console.log(window.Telegram.WebApp)
+		// console.log(window.screen)
 		return(
 			<>
 			Header set Access-Control-Allow-Origin 'https://telegram.org/js/telegram-web-app.js'

@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './Shop.module.css';
+declare const window: any;
 
 export default class Shop extends React.Component {
 
@@ -9,12 +10,13 @@ export default class Shop extends React.Component {
 	}
 
 	render(): React.ReactNode {
+		const screenData = (String(window.screen.width)+':'+String(window.screen.height)+'|'+String(window.screen.availWidth)+':'+String(window.screen.availHeight))
 		let goodsList: React.ReactNode[] = []
-		for (let i = 0; i < 8; i++)
+		for (let i = 0; i < 1; i++)
 		{
 			goodsList.push(
-				<div className={style.element}>
-					
+				<div className={style.element} key={i}>
+					{screenData}
 				</div>
 				)
 		}
