@@ -1,0 +1,42 @@
+.OilPumps
+{
+	top: 0;
+	position: fixed;
+	width: 0%;
+	height: 0%;
+	button
+	{
+		position: fixed;
+
+		width: 16em;
+
+		border-width: 0;
+		border-radius: 10%;
+		background-color: #fff0;
+		background-position: center 40%;
+		background-size: 100%;
+
+		aspect-ratio: 1;
+		translate: -50% -50%;
+	}
+	.b0
+	{
+		left: 18vw;
+		top: 28vh;
+	}
+	.b1
+	{
+		left: 68vw;
+		top: 34vh;
+	}
+	.b2
+	{
+		left: 17vw;
+		top: 67vh;
+	}
+	.b3
+	{
+		left: 85vw;
+		top: 67vh;
+	}
+}

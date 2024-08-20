@@ -1,8 +1,10 @@
 import React from 'react';
 import style from './Game.module.css';
+import stylePublic from './StylePublic.module.css'
 import locs from './locs/locs.json' 
-import OilPumps from './OilPumps/OilPumps.tsx';
-import Shop from './Shop/Shop.tsx';
+import OilPumps from './menus/OilPumps/OilPumps.tsx';
+import Shop from './menus/Shop/Shop.tsx';
+import Friends from './menus/Friends/Friends.tsx';
 declare const window: any;
 
 export default class Game extends React.Component {
@@ -30,6 +32,7 @@ export default class Game extends React.Component {
 		this.loc = this.locs[language];
 	}
 
+
 	collect(){
 		alert("Collect")
 	}
@@ -44,7 +47,6 @@ export default class Game extends React.Component {
 	}
 
 	render(): React.ReactNode {
-		// console.log("вывожу информацию об экране")
 		return(
 			<>
 			<div className={style.Game}>
@@ -58,29 +60,32 @@ export default class Game extends React.Component {
 						<div className={style.money}>
 							<div className={style.amount}></div>
 							<img className={style.icon} src='./assets/buttons/coin.png'/>
-							<button className={style.buy} onClick={()=>this.setActive('buyMoney')}></button>
+							<button className={style.buy} onClick={()=>{alert("Активно окно покупки"); this.setActive('buyMoney')}}></button>
 						</div>
 						<div className={style.diamonds}>
 							<div className={style.amount}></div>
 							<img className={style.icon} src='./assets/buttons/diamond.png'/>
-							<button className={style.buy} onClick={()=>this.setActive('buyDiamonds')}></button>
+							<button className={style.buy} onClick={()=>{alert("Активно окно покупки"); this.setActive('buyDiamonds')}}></button>
 						</div>
 					</div>
 
-					<OilPumps/>
 
-					<button className={style.collect + ' ' + style.decor} onClick={this.collect}>
+					<button className={style.collect + ' ' + stylePublic.decor} onClick={this.collect}>
 						<div className={style.text}>Собрать</div>
 					</button>
 
-					<nav className={style.main + ' ' + style.decor}>
-						<button className={style.home + ' ' + style[(this.state.menu.home) ? 'active' : '']} 		onClick={()=>this.setActive('home')}></button>
-						<button className={style.shop + ' ' + style[(this.state.menu.shop) ? 'active' : '']} 		onClick={()=>this.setActive('shop')}></button>
-						<button className={style.friends + ' ' + style[(this.state.menu.friends) ? 'active' : '']}	onClick={()=>this.setActive('friends')}></button>
-						<button className={style.map + ' ' + style[(this.state.menu.map) ? 'active' : '']} 			onClick={()=>this.setActive('map')}></button>
+					<nav className={style.main + ' ' + stylePublic.decor}>
+						<button className={style.home + ' ' + (this.state.menu.home ? style.active : '')} 		onClick={()=>this.setActive('home')}></button>
+						<button className={style.shop + ' ' + (this.state.menu.shop ? style.active : '')} 		onClick={()=>this.setActive('shop')}></button>
+						<button className={style.friends + ' ' + (this.state.menu.friends ? style.active : '')}	onClick={()=>this.setActive('friends')}></button>
+						<button className={style.map + ' ' + (this.state.menu.map ? style.active : '')} 		onClick={()=>this.setActive('map')}></button>
 					</nav>
 
+					{/*Различные менюшки / different menus*/}
+					{/*{this.state.menu.map ? <OilPumps/> : ''}*/}
+					<OilPumps/>
 					{this.state.menu.shop ? <Shop/> : ''}
+					{this.state.menu.friends ? <Friends/> : ''}
 
 				</div>
 			</div>
