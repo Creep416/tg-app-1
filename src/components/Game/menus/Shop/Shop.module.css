@@ -1,12 +1,13 @@
-.shopList
+.Shop
 {
-	overflow: scroll;
 	display: flex;
+	overflow-y: scroll;
 	flex-direction: column;
 
 	box-sizing: border-box;
 	width: 100%;
 	height: 100%;
+	padding: 1em;
 
 	border: none;
 	border-radius: 1rem;
@@ -18,64 +19,92 @@
 
 	div.element
 	{
+		position: relative;
 		display: flex;
+		justify-content: space-between;
 		flex-direction: row;
 		gap: 5%;
 
 		box-sizing: border-box;
 		width: 100%;
-		min-height: 200px;
-		padding: 8%;
+		min-height: 30%;
+		padding: 2%;
 
-		border-radius: 1rem;
+		border-radius: .5rem;
 		background: linear-gradient(45deg, #567aac 30%, #4f98c1 80%, #567aac 200%);
 
 		.img
 		{
+			position: relative;
+			
+			aspect-ratio: 1;
+/*			height: 50%;*/
 			width: 40%;
 
-			border: 4px;
+			display: block;
+
+			border: 3px;
 			border-style: solid;
 			border-color: #f4d24b;
 			border-radius: 10%;
-			background-image: url('./assets/pumps/lvl_1.png'), linear-gradient(45deg, #e4ac71 0%, #edc882 50%, #e4ac71 100%);
+			background-image: url('/OilPumps/lvl_1.png'), linear-gradient(45deg, #e4ac71 0%, #edc882 50%, #e4ac71 100%);
 			background-repeat: no-repeat;
 			background-position: center;
-			background-size: 80%, 100%;
+			background-size: 100%, 100%;
 
-			aspect-ratio: 1;
 		}
 
 		.description
 		{
+			height: 100%;
+			position: relative;
+			font-size: .5rem;
 			display: flex;
+			flex: 50%;
 			flex-direction: column;
 
-			border-radius: 1rem;
-
-			flex-grow: 1;
 			justify-content: space-between;
 			align-items: center;
 
 			text-align: left;
+			button
+			{
+				position: relative;
+
+				display: block;
+
+				width: 100%;
+				height: 2em;
+
+				transition: .5s;
+
+				border-width: 2px;
+				border-style: solid;
+				
+				border-radius: .5rem;
+
+				translate: 0 0;
+			}
+
 			.buy
 			{
-				width: 100%;
-				height: 30%;
-
-				border-style: solid;
-				border-width: 2px;
-				border-color: #9F9;
-				border-radius: .5rem;
+				border-color: #9f9;
 				background: linear-gradient(135deg, #5f5 75%, #9f9 90%, #5f5 150%);
 			}
-			.buy:active
+			.sell
 			{
-				border-color: #F99 !important;
-				background: linear-gradient(135deg, #f55 75%, #f99 90%, #f55 150%) !important;
+				border-color: #F99;
+				background: linear-gradient(135deg, #f55 75%, #f99 90%, #f55 150%);
+			}
+			/*.active:active
+			{
+				background: radial-gradient(#FC05, #0000 80%), linear-gradient(135deg, #f55 75%, #f99 90%, #f55 150%);
+			}*/
+			.inactive
+			{
+				border-color: #999;
+				background: linear-gradient(135deg, #555 75%, #999 90%, #555 150%);
 			}
 		}
-
 	}
-
 }

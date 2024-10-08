@@ -1,14 +1,14 @@
 import React from 'react'
 import style from './Friends.module.css'
-import stylePub from './../../StylePublic.module.css'
+import stylePub from './../../../../StylePublic.module.css'
 
 export default class Friends extends React.Component{
-	friendsList: object;
-	
-	constructor(props:object)
+	state: IFriendsState;
+
+	constructor(props: IFriendsProps)
 	{
 		super(props)
-		this.friendsList = {}
+		this.state = {friendsList: props.friendsList}
 	}
 
 	render(): React.ReactNode {

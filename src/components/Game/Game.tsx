@@ -1,44 +1,49 @@
-import React from 'react';
+import {Component, ReactNode} from 'react';
 import style from './Game.module.css';
-import stylePublic from './StylePublic.module.css'
-import locs from './locs/locs.json' 
+import stylePublic from './../../StylePublic.module.css';
+import type * as Ifc from './Game.ifc.d.ts';
+
 import OilPumps from './menus/OilPumps/OilPumps.tsx';
-import Shop from './menus/Shop/Shop.tsx';
+import Collect from './menus/Collect/Collect.tsx';
 import Friends from './menus/Friends/Friends.tsx';
-declare const window: any;
+import Resources from './Resources/Resources.tsx';
+import ShopBox from './menus/ShopBox/ShopBox.tsx';
 
-export default class Game extends React.Component {
-	loc: {[key: string]: string};
-	locs: {[key:string]: {[key:string]:string}};
-	state: {[key:string]: {[key:string]:boolean}}
+type Props = {
+	gameData: IgameData;
+}
 
-	constructor(props: object) {
+export default class Game extends Component {
+	props: Props;
+	state: Ifc.Istate;
+	window: React.ReactNode;
+	gameData: IgameData;
+
+	
+
+	constructor(props: Props) {
 		super(props)
-		this.loc={}
-		this.locs=locs
+		this.props = props;
+		this.gameData = props.gameData;
 		this.state = {
-			"menu":{
+			'menu': {
 				'buyMoney': false,
 				'buyDiamonds': false,
-				'home': false,
+				'home': true,
 				'shop': false,
 				'friends': false,
-				'map': true
+				'worldMap': false
 			}
 		}
 	}
 
-	locSet(language: string):void{
-		this.loc = this.locs[language];
-	}
-
-
 	collect(){
-		alert("Collect")
+		alert('Collect')
 	}
 
 	setActive(menu: string):void{
-		for (let [key, _] of Object.entries(this.state.menu))
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		for (const [key, _] of Object.entries(this.state.menu))
 		{
 			this.state.menu[key] = false;
 		}
@@ -46,46 +51,31 @@ export default class Game extends React.Component {
 		this.setState(this.state)
 	}
 
-	render(): React.ReactNode {
+	render(): ReactNode {
 		return(
 			<>
 			<div className={style.Game}>
 				<div className={style.interface}>
 					
-					<div className={style.resources}>
-						<div className={style.oil}>
-							<div className={style.amount}>100</div>
-							<img className={style.icon} src='./assets/buttons/oil.png'/>
-						</div>
-						<div className={style.money}>
-							<div className={style.amount}></div>
-							<img className={style.icon} src='./assets/buttons/coin.png'/>
-							<button className={style.buy} onClick={()=>{alert("Активно окно покупки"); this.setActive('buyMoney')}}></button>
-						</div>
-						<div className={style.diamonds}>
-							<div className={style.amount}></div>
-							<img className={style.icon} src='./assets/buttons/diamond.png'/>
-							<button className={style.buy} onClick={()=>{alert("Активно окно покупки"); this.setActive('buyDiamonds')}}></button>
-						</div>
-					</div>
+					<Resources/>
 
-
-					<button className={style.collect + ' ' + stylePublic.decor} onClick={this.collect}>
-						<div className={style.text}>Собрать</div>
-					</button>
+					<Collect metaData={this.gameData.metaData}/>
 
 					<nav className={style.main + ' ' + stylePublic.decor}>
 						<button className={style.home + ' ' + (this.state.menu.home ? style.active : '')} 		onClick={()=>this.setActive('home')}></button>
 						<button className={style.shop + ' ' + (this.state.menu.shop ? style.active : '')} 		onClick={()=>this.setActive('shop')}></button>
 						<button className={style.friends + ' ' + (this.state.menu.friends ? style.active : '')}	onClick={()=>this.setActive('friends')}></button>
-						<button className={style.map + ' ' + (this.state.menu.map ? style.active : '')} 		onClick={()=>this.setActive('map')}></button>
+						<button className={style.map + ' ' + (this.state.menu.worldMap ? style.active : '')} 		onClick={()=>this.setActive('worldMap')}></button>
 					</nav>
 
-					{/*Различные менюшки / different menus*/}
-					{/*{this.state.menu.map ? <OilPumps/> : ''}*/}
 					<OilPumps/>
-					{this.state.menu.shop ? <Shop/> : ''}
-					{this.state.menu.friends ? <Friends/> : ''}
+					
+					{/*{this.state.menu.buyMoney ? <ShopBox insideList={<Shop activePump={0} shopList={{}}/>}/> : ''}*/}
+					{/*{this.state.menu.buyDiamonds ? <ShopBox insideList={<Shop activePump={0} shopList={{}}/>}/> : ''}*/}
+					{/*{this.state.menu.home ? <ShopBox insideList={<Shop activePump={0} shopList={{}}/>}/> : ''}*/}
+					{/*{this.state.menu.shop ? <ShopBox insideList={<Shop activePump={0} shopList={{}}/>}/> : ''}*/}
+					{this.state.menu.friends ? <ShopBox insideList={<Friends />} onClick={function (): void {}}/> : ''}
+					{/*{this.state.menu.worldMap ? <WorldMap/> : ''}*/}
 
 				</div>
 			</div>

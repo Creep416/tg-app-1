@@ -1,0 +1,30 @@
+button.decor, .decor>button
+{
+	--button-rotate: -20deg;
+	padding: 0;
+
+	border-width: 2px;
+	border-style: none;
+	background-color: var(--col-blue);
+}
+
+button.decor:before, .decor>button:before
+{
+	--button-rotate: -45deg;
+	position: relative;
+	z-index: -1;
+	top: 50%;
+	left: 50%;
+
+	display: block;
+
+	width: calc(100% + 8px);
+	height: calc(100% + 8px);
+
+	content: '';
+
+	border-radius: inherit;
+	background-image: linear-gradient(var(--button-rotate), hsl(216.449, 33%, 50%) 80%, #ccc 90%);
+
+	translate: -50% -50%;
+}

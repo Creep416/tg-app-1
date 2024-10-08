@@ -1,0 +1,70 @@
+.closingButton
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 100vw;
+	height: 100vh;
+
+	background-color: #0003;
+}
+
+.menuBg
+{
+	position: fixed;
+	top: 50vh;
+	left: 50vw;
+
+	box-sizing: border-box;
+	width: 75vw;
+	height: 75vh;
+
+	border-radius: 1em;
+	background-color: #718ebb;
+
+	translate: -50% -50%;
+}
+
+.menuBg:before
+{
+	height: calc(100% - 1em);
+	width: calc(100% - 1em);
+	top: 50%;
+	left: 50%;
+	content: '';
+	display: block;
+	position: absolute;
+	border-radius: .75em;
+	translate: -50% -50%;
+	background-color: #5679AC;
+}
+
+.menu
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	box-sizing: border-box;
+	width: calc(100% - 2em);
+	height: calc(100% - 2em);
+
+	border-radius: .5em;
+	background-color: #a5b8d6;
+
+	translate: -50% -50%;
+}
+
+.menu:before
+{
+	height: 2em;
+	width: 80%;
+	top: 0%;
+	left: 50%;
+	content: '';
+	display: block;
+	position: absolute;
+	translate: -50% -100%;
+	background-color: #818284;
+}

@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
+// import mkcert from 'vite-plugin-mkcert'
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react()]
+  // plugins: [react(), mkcert()],
   // server: {
   //   port: 5173,
   //   host: "0.0.0.0",
@@ -15,4 +17,5 @@ export default defineConfig({
   //     cert: ('./.cert/rootCA.pem'),
   //   },
   // },
+  
 })

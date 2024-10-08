@@ -1,0 +1,63 @@
+div.collect_box
+{
+	position: absolute;
+	bottom: 14vh;
+	left: 20vw;
+
+	display: flex;
+	flex-direction: row;
+
+	width: 60vw;
+	height: 7vh;
+
+	border-radius: 1rem;
+
+	gap: 5%;
+	justify-content: space-between;
+
+	button
+	{
+		height: 100%;
+		border-radius: 1.5vh;
+		font-size: 100%;
+		border-style: solid;
+		border-width: 2px;
+		font-weight: bold;
+	}
+
+	button.collect_summ
+	{
+		white-space: pre;
+		display: flex;
+		flex-direction: row;
+
+		width: 80%;
+		
+		vertical-align: middle;
+
+		border-color: #000;
+		background: linear-gradient(#fff, #707 15%, #40a 85%, #aaa);
+
+		justify-content: center;
+		align-items: center;
+
+			.collect
+			{
+				color: #FF1;
+			}
+			.summ
+			{
+				color: #FFF;
+			}
+		}
+
+	button.use_booster
+	{
+		aspect-ratio: 1;
+		border-color: #707;
+		background-color: #000;
+		background-image: url("/Collect/lightning.svg");
+		background-size: 100% 100%;
+	}
+
+}

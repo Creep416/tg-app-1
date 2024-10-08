@@ -42,7 +42,7 @@ button.decor:before, .decor>button:before
 	height: 81vh;
 	padding: 14% 6% 7%;
 
-	background-image: url(./assets/bg/window-bg-lq.png);
+	background-image: url(/assets/bg/window-bg-lq.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100% 100%;
